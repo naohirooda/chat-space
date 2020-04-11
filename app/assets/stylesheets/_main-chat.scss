@@ -8,9 +8,9 @@
     justify-content: space-between;
     overflow: scroll;
     display: flex;
-    .chat-top__header-left{
+    &__header-left{
       margin-top: 35px;
-      h1.chat-top__header-left__group{
+      &__group{
         font-size: 20px;
         color: #333;
         margin-bottom: 15px;
@@ -25,7 +25,7 @@
       }
     }
     a{
-      .chat-top__edit{
+      &__edit{
         height: 40px;
         line-height: 40px;
         padding: 0 20px;
@@ -43,20 +43,20 @@
     overflow: scroll;
     .content{
       padding-bottom: 40px;
-      .content__info{
+      &__info{
         display: flex;
         margin-bottom: 10px;
-        p.content__info__talker{
+        &__talker{
          color:#434a54;
          font-size: 16px;
          font-weight: bold; 
         }
-        p.content__ionfo__data{
+        &__data{
           color: #999999;
           font-size: 12px;
           margin-left: 10px;
         }
-      p.content__info__text{
+      &__text{
         color: #434a54;
         font-size: 14px;
         margin-bottom: 10px;
