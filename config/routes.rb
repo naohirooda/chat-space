@@ -1,3 +1,5 @@
 Rails.application.routes.draw do
-end
+  get 'messages/index'
+
+  root "messages#index"
 end

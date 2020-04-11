@@ -1,0 +1,27 @@
+.main-chat
+  .chat-top
+    .chat-top__header-left
+      %h1.chat-top__header-left__group test
+      %ul.chat-top__header-left__member
+        Member:
+        %li.chat-top__header-left__member__person
+          織田
+    %a
+      .chat-top__edit edit      
+  .chat-contents
+    .content 
+      .content__info
+        %p.content__info__talker
+        織田
+        %p.content__ionfo__data
+        2020/04/11(sat) 12:18:33
+      %p.content__info__text
+      ありがとう
+  .form
+    %form.new_message
+      .input-box
+        %input{type: "text", class: "input-box__text", placeholder: "type a message"}
+        %label{class: "input-box__image"}
+          = icon('fas', 'image')
+          %input{type: "file", class: "input-box__image__file"}
+      %input{type: "submit", class: "submit-btn"}
