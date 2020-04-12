@@ -1,15 +1,16 @@
 .side-bar
   .bar-top
     .bar-top-box
-      %p.bar-top-box__left織田
-      
+      %p.bar-top-box__left
+        = current_user.name
       %ul.bar-top-box__right
         %li.bar-top-box__right__new-group
           %a
             %i.fa.fa-edit
         %li.bar-top-box__right__edit
-          %a
-            %i.fa.fa-cog
+          =link_to edit_user_path(current_user) do
+            =icon('fas', 'cog', class: 'icon')
+           
             
   .bar-content
     %a
