@@ -54,8 +54,8 @@ $(function() {
       $.each(messages, function(i, message) {
         insertHTML += buildHTML(message)
       });
-      $('.messages').append(insertHTML);
-      $('messages').animate({ scrollTop: $('.messages')[0].scrollHeight});
+      $('.chat-contents').append(insertHTML);
+      $('.chat-contents').animate({ scrollTop: $('.chat-contents')[0].scrollHeight});
     }
     })
     .fail(function() {
@@ -65,7 +65,7 @@ $(function() {
   if (document.location.href.match(/\/groups\/\d+\/messages/)) {
   setInterval(reloadMessages, 7000);
   }
-});
+
 $('#new_message').on('submit', function(e){
   e.preventDefault();
   var formData = new FormData(this);
@@ -80,14 +80,15 @@ $('#new_message').on('submit', function(e){
   })
    .done(function(data){
      var html = buildHTML(data);
-     $('.messages').append(html);
-     $('.messages').animate({ scrollTop: $('.messages')[0].scrollHeight});
-     $('.form__submit')[0].reset();
+     $('.chat-contents').append(html);
+     $('.chat-contents').animate({ scrollTop: $('.chat-contents')[0].scrollHeight});
+     $('.new_message')[0].reset();
    })
    .fail(function(){
      alert('error');
    })
-   always(function(){
-     form__submit.prop('disabled',false);
+   .always(function(){
+     $('.form__submit').prop('disabled',false);
    });
    });
+  });
