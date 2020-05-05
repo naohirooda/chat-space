@@ -16,13 +16,6 @@
         Edit
   .chat-contents
     = render @messages
-    .content 
-      .content__info
-        %p.content__info__talker
-        
-        %p.content__info__date
-        
-      %p.content__info__text
         
   .form
     = form_for [@group, @message] do |f|
