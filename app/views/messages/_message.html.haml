@@ -1,11 +1,11 @@
-.message{data: {message: {id: message.id}}}
-  .upper-message
-    .upper-message__user-name
+.content{data: {content: {id: message.id}}}
+  .upper-content
+    .upper-content__user-name
       = message.user.name
-    .upper_message__date
+    .upper-content__date
       = message.created_at.strftime("%Y年%m月%d日 %H時%M分")
-    .lower-message
-      - if message.content.present?
-        %p.lower-message__content
-          = message.content
-      = image_tag message.image.url, class: 'lower-message__image' if message.image.present?
+  .lower-content
+    - if message.content.present?
+      %p.lower-content__content
+        = message.content
+    = image_tag message.image.url, class: 'lower-message__image' if message.image.present?

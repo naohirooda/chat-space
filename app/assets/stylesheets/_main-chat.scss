@@ -1,23 +1,22 @@
 .main-chat {
   width: calc(100vw - 300px);
   float: left;
+
   .chat-top{
     height: 100px;
-    border-bottom: solid 1px #eeeeee;
+    border-bottom: solid 1px #eee;
     padding: 0px 40px;
     justify-content: space-between;
     overflow: scroll;
     display: flex;
     &__header-left{
       margin-top: 35px;
-      list-style: none;
-      &__group{
-        font-size: 20px;
-        color: #333;
-        margin-bottom: 15px;
-        
+      &__group {
+          font-size: 20px;
+          color: #333;
+          margin-bottom: 15px;
       }
-      ul{
+      &__member__person{
         display: flex;
         font-size: 12px;
         color: #999;
@@ -32,9 +31,10 @@
         border: solid 1px #38aef0;
         position: absolute;
         right: 40px;
-        color: #38aef0;
+        .editbtn{
+          color: #38aef0;
+        }
       }
-    
   }
   .chat-contents{
     height: calc(100vh - 190px);
@@ -43,25 +43,25 @@
     overflow: scroll;
     .content{
       padding-bottom: 40px;
-      &__info{
+      .upper-content{
         display: flex;
         margin-bottom: 10px;
-        &__talker{
-         color:#434a54;
-         font-size: 16px;
-         font-weight: bold; 
-        }
-        &__data{
-          color: #999999;
-          font-size: 12px;
-          margin-left: 10px;
-        }
-      &__text{
+          &__talker{
+           color:#434a54;
+           font-size: 16px;
+           font-weight: bold; 
+          }
+          &__date{
+            color: #999999;
+            font-size: 12px;
+            margin-left: 10px;
+          }
+      }
+      .lower-content{
         color: #434a54;
         font-size: 14px;
         margin-bottom: 10px;
-      }       
-      }
+      }      
     }
   }
   .form {
@@ -101,4 +101,8 @@
       }
     }
   }
+}
+
+a{
+  text-decoration: none;
 }

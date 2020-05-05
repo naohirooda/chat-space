@@ -2,17 +2,17 @@ $(function() {
   function buildHTML(message){
    if ( message.image ) {
      var html =
-      `<div class="message" data-message-id=${message.id}>
-         <div class="upper-message">
-           <div class="upper-message__user-name">
+      `<div class="content" data-message-id=${message.id}>
+         <div class="upper-content">
+           <div class="upper-content__user-name">
              ${message.user_name}
            </div>
-           <div class="upper-message__date">
+           <div class="upper-content__date">
              ${message.created_at}
            </div>
          </div>
-         <div class="lower-message">
-           <p class="lower-message__content">
+         <div class="lower-content">
+           <p class="lower-content__content">
              ${message.content}
            </p>
          </div>
@@ -21,17 +21,17 @@ $(function() {
      return html;
    } else {
      var html =
-      `<div class="message" data-message-id=${message.id}>
-         <div class="upper-message">
-           <div class="upper-message__user-name">
+      `<div class="content" data-message-id=${message.id}>
+         <div class="upper-content">
+           <div class="upper-content__user-name">
              ${message.user_name}
            </div>
-           <div class="upper-message__date">
+           <div class="upper-content__date">
              ${message.created_at}
            </div>
          </div>
-         <div class="lower-message">
-           <p class="lower-message__content">
+         <div class="lower-content">
+           <p class="lower-content__content">
              ${message.content}
            </p>
          </div>
@@ -41,7 +41,7 @@ $(function() {
   }
 
   var reloadMessages = function() {
-    var last_message_id = $('.message:last').data("message-id");
+    var last_message_id = $('.content:last').data("message-id");
     $.ajax({
       url: "api/messages",
       type: 'get',
@@ -59,7 +59,7 @@ $(function() {
     }
     })
     .fail(function() {
-      alert('error');
+      alert('メッセージ送信に失敗しました');
     });
   };
   if (document.location.href.match(/\/groups\/\d+\/messages/)) {
@@ -84,8 +84,8 @@ $('#new_message').on('submit', function(e){
      $('.chat-contents').animate({ scrollTop: $('.chat-contents')[0].scrollHeight});
      $('.new_message')[0].reset();
    })
-   .fail(function(){
-     alert('error');
+   .fail(function() {
+     alert('メッセージを入力してください');
    })
    .always(function(){
      $('.form__submit').prop('disabled',false);

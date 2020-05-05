@@ -3,27 +3,27 @@
     .chat-top__header-left
       
       %h1.chat-top__header-left__group
-        
-        %ul.chat-top__header-left__member
         = @group.name
+      %ul.chat-top__header-left__member
+        
         %li.chat-top__header-left__member__person
           Member:
           - @group.users.each do |user|
             = user.name
 
-    .chat-top__edit
-      = link_to edit_group_path(@group) do
-        edit
+    .chat-top__edit 
+      = link_to edit_group_path(@group), class: "editbtn" do
+        Edit
   .chat-contents
     = render @messages
     .content 
       .content__info
         %p.content__info__talker
-        織田
-        %p.content__ionfo__data
-        2020/04/11(sat) 12:18:33
+        
+        %p.content__info__date
+        
       %p.content__info__text
-        ありがとう
+        
   .form
     = form_for [@group, @message] do |f|
       = f.text_field :content, class: 'form__message',placeholder: 'type a message'

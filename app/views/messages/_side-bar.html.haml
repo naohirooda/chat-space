@@ -12,12 +12,12 @@
             =icon('fas', 'cog', class: 'icon')
            
             
-  .bar-content
+  .groups
     - current_user.groups.each do |group|
       .group
         = link_to group_messages_path(group) do
-          .group__name
+          .group__group-name
             = group.name
-          .group__message
+          .group__latest-message
             = group.show_last_message
 
